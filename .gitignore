@@ -1,1 +1,5 @@
 .idea/
+.terraform/
+local.auto.tfvars
+*.tfstate*
+local.credentials
