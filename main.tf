@@ -5,7 +5,7 @@ provider "yandex" {
 }
 
 module "storage_admin" {
-  source = "alxrem/service-account/yandex"
+  source = "github.com/alxrem/terraform-yandex-service-account"
 
   name              = var.storage_admin_name
   roles             = concat(["storage.admin"], var.use_sse ? ["kms.keys.encrypterDecrypter"] : [])
@@ -14,7 +14,7 @@ module "storage_admin" {
 }
 
 module "tfstate_operator" {
-  source = "alxrem/service-account/yandex"
+  source = "github.com/alxrem/terraform-yandex-service-account"
 
   name              = var.tfstate_writer_name
   roles             = concat(["ydb.admin"], var.use_sse ? ["kms.keys.encrypterDecrypter"] : [])
